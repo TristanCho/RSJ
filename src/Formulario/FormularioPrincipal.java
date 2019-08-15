@@ -17,7 +17,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JRadioButton;
 
 
-public class Original extends javax.swing.JFrame {
+public class FormularioPrincipal extends javax.swing.JFrame {
 
     private final Cls_Sensores Sensores_Registrados;
     private final Cls_Alarma Actividad;
@@ -28,7 +28,7 @@ public class Original extends javax.swing.JFrame {
     private Cls_Conexion cnn;
    
      
-     public Original() {
+     public FormularioPrincipal() {
         initComponents();
        
         Sensores_Registrados = new Cls_Sensores(cnn);
@@ -39,27 +39,7 @@ public class Original extends javax.swing.JFrame {
     add(btnMenu);
     add(btn_configuracion); 
     add(btnSensores);
-    
-    
-    
-    /*
-    PanelSensores.add(Sensor1);
-    PanelSensores.add(Sensor2);
-    PanelSensores.add(Sensor3);
-    PanelSensores.add(Sensor4);
-    PanelSensores.add(Sensor5);
-    PanelSensores.add(Sensor6);
-    */
-   // add(PanelSensores);
-        /*
-        jtf_UserDDBB.setText(DatosConfig.dimeUser());
-        jtf_PassDDBB.setText(DatosConfig.dimePass());
-        jtf_DDBB.setText(DatosConfig.dimeDDBB());
-        jtf_Puerto.setText(DatosConfig.dimePuerto());
-        jtf_LocalServer.setText(DatosConfig.dimeLocalServer());
-        jtf_RemoteServer.setText(DatosConfig.dimeRemoteServer());
-        jtf_RemoteServer2.setText(DatosConfig.dimeRemoteServer2());
-*/
+ 
         int auxInt = 1;
       
         
@@ -79,7 +59,7 @@ public class Original extends javax.swing.JFrame {
                         listar_Actividad();
                         listar_Sensores();
                     } catch (InterruptedException | ClassNotFoundException | SQLException ex) {
-                        Logger.getLogger(Original.class.getName()).log(Level.SEVERE, null, ex);
+                        Logger.getLogger(FormularioPrincipal.class.getName()).log(Level.SEVERE, null, ex);
                         System.out.println("Fallo en Temporizador");
                     }
                 }
@@ -99,6 +79,27 @@ public class Original extends javax.swing.JFrame {
 
     private void Refresh_Tabulados_Sensores(Boolean estado) {
        
+        jtfSensor1.setEnabled(estado);
+        jtfSensor2.setEnabled(estado);
+        jtfSensor3.setEnabled(estado);
+        jtfSensor4.setEnabled(estado);
+        jtfSensor5.setEnabled(estado);
+        jtfSensor6.setEnabled(estado);
+        jtfSensor7.setEnabled(estado);
+        jtfSensor8.setEnabled(estado);
+        jtfSensor9.setEnabled(estado);
+        jtfSensor10.setEnabled(estado);
+        jtfResidente1.setEnabled(estado);
+        jtfResidente2.setEnabled(estado);
+        jtfResidente3.setEnabled(estado);
+        jtfResidente4.setEnabled(estado);
+        jtfResidente5.setEnabled(estado);
+        jtfResidente6.setEnabled(estado);
+        jtfResidente7.setEnabled(estado);
+        jtfResidente8.setEnabled(estado);
+        jtfResidente9.setEnabled(estado);
+        jtfResidente10.setEnabled(estado);
+        
         //Al modificar,  pausamos el timer principal y bloqueamos el tabcontrol.
         tempIsPaused = estado;
     }
@@ -202,39 +203,59 @@ public class Original extends javax.swing.JFrame {
         jLabel13 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
-        jTextField3 = new javax.swing.JTextField();
-        jTextField4 = new javax.swing.JTextField();
-        jTextField5 = new javax.swing.JTextField();
-        jTextField6 = new javax.swing.JTextField();
-        jTextField7 = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        jtf_RemoteServer2 = new javax.swing.JTextField();
+        jtf_RemoteServer = new javax.swing.JTextField();
+        jtf_LocalServer = new javax.swing.JTextField();
+        jtf_Puerto = new javax.swing.JTextField();
+        jtf_PassDDBB = new javax.swing.JTextField();
+        jtf_UserDDBB = new javax.swing.JTextField();
+        jtf_DDBB = new javax.swing.JTextField();
+        btn_Editar = new javax.swing.JButton();
+        btn_Guardar = new javax.swing.JButton();
         PanelConfgSensores = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
-        jTextField8 = new javax.swing.JTextField();
-        jTextField9 = new javax.swing.JTextField();
+        jtfSensor1 = new javax.swing.JTextField();
+        jtfSensor2 = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
-        jTextField10 = new javax.swing.JTextField();
+        jtfSensor3 = new javax.swing.JTextField();
         jLabel9 = new javax.swing.JLabel();
-        jTextField11 = new javax.swing.JTextField();
+        jtfSensor4 = new javax.swing.JTextField();
         jLabel16 = new javax.swing.JLabel();
         jLabel17 = new javax.swing.JLabel();
-        jTextField12 = new javax.swing.JTextField();
+        jtfSensor5 = new javax.swing.JTextField();
         jLabel18 = new javax.swing.JLabel();
-        jTextField13 = new javax.swing.JTextField();
+        jtfSensor6 = new javax.swing.JTextField();
         jLabel19 = new javax.swing.JLabel();
-        jTextField14 = new javax.swing.JTextField();
-        jTextField15 = new javax.swing.JTextField();
+        jtfSensor7 = new javax.swing.JTextField();
+        jtfSensor8 = new javax.swing.JTextField();
         jLabel20 = new javax.swing.JLabel();
         jLabel21 = new javax.swing.JLabel();
-        jTextField16 = new javax.swing.JTextField();
+        jtfSensor9 = new javax.swing.JTextField();
         jLabel22 = new javax.swing.JLabel();
-        jTextField17 = new javax.swing.JTextField();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
+        jtfSensor10 = new javax.swing.JTextField();
+        btn_Modificar = new javax.swing.JButton();
+        btnAceptar = new javax.swing.JButton();
+        jLabel23 = new javax.swing.JLabel();
+        jtfResidente1 = new javax.swing.JTextField();
+        jLabel24 = new javax.swing.JLabel();
+        jtfResidente2 = new javax.swing.JTextField();
+        jLabel25 = new javax.swing.JLabel();
+        jtfResidente3 = new javax.swing.JTextField();
+        jtfResidente4 = new javax.swing.JTextField();
+        jtfResidente5 = new javax.swing.JTextField();
+        jtfResidente6 = new javax.swing.JTextField();
+        jtfResidente7 = new javax.swing.JTextField();
+        jtfResidente8 = new javax.swing.JTextField();
+        jtfResidente9 = new javax.swing.JTextField();
+        jtfResidente10 = new javax.swing.JTextField();
+        jLabel26 = new javax.swing.JLabel();
+        jLabel27 = new javax.swing.JLabel();
+        jLabel28 = new javax.swing.JLabel();
+        jLabel29 = new javax.swing.JLabel();
+        jLabel30 = new javax.swing.JLabel();
+        jLabel31 = new javax.swing.JLabel();
+        jLabel32 = new javax.swing.JLabel();
         btnSensores = new javax.swing.JButton();
         btn_configuracion = new javax.swing.JButton();
         btnMenu = new javax.swing.JButton();
@@ -1140,17 +1161,17 @@ public class Original extends javax.swing.JFrame {
         PanelConexion.setBackground(new java.awt.Color(204, 204, 204));
         PanelConexion.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        jLabel4.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
         jLabel4.setText("Parámetros de Conexión");
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        jLabel6.setText("PassDDBB:");
+        jLabel6.setText("DDBB:");
 
         jLabel10.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jLabel10.setText("UserDDBB:");
 
         jLabel11.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        jLabel11.setText("DDBB:");
+        jLabel11.setText("PassDDBB");
 
         jLabel12.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jLabel12.setText("Puerto:");
@@ -1164,51 +1185,68 @@ public class Original extends javax.swing.JFrame {
         jLabel15.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jLabel15.setText("RemoteServer2:");
 
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+        jtf_RemoteServer2.setEnabled(false);
+        jtf_RemoteServer2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+                jtf_RemoteServer2ActionPerformed(evt);
             }
         });
 
-        jTextField2.addActionListener(new java.awt.event.ActionListener() {
+        jtf_RemoteServer.setEnabled(false);
+        jtf_RemoteServer.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField2ActionPerformed(evt);
+                jtf_RemoteServerActionPerformed(evt);
             }
         });
 
-        jTextField3.addActionListener(new java.awt.event.ActionListener() {
+        jtf_LocalServer.setEnabled(false);
+        jtf_LocalServer.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField3ActionPerformed(evt);
+                jtf_LocalServerActionPerformed(evt);
             }
         });
 
-        jTextField4.addActionListener(new java.awt.event.ActionListener() {
+        jtf_Puerto.setEnabled(false);
+        jtf_Puerto.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField4ActionPerformed(evt);
+                jtf_PuertoActionPerformed(evt);
             }
         });
 
-        jTextField5.addActionListener(new java.awt.event.ActionListener() {
+        jtf_PassDDBB.setEnabled(false);
+        jtf_PassDDBB.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField5ActionPerformed(evt);
+                jtf_PassDDBBActionPerformed(evt);
             }
         });
 
-        jTextField6.addActionListener(new java.awt.event.ActionListener() {
+        jtf_UserDDBB.setEnabled(false);
+        jtf_UserDDBB.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField6ActionPerformed(evt);
+                jtf_UserDDBBActionPerformed(evt);
             }
         });
 
-        jTextField7.addActionListener(new java.awt.event.ActionListener() {
+        jtf_DDBB.setEnabled(false);
+        jtf_DDBB.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField7ActionPerformed(evt);
+                jtf_DDBBActionPerformed(evt);
             }
         });
 
-        jButton1.setText("Editar");
+        btn_Editar.setText("Editar");
+        btn_Editar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_EditarActionPerformed(evt);
+            }
+        });
 
-        jButton2.setText("Guardar");
+        btn_Guardar.setText("Guardar");
+        btn_Guardar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_GuardarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout PanelConexionLayout = new javax.swing.GroupLayout(PanelConexion);
         PanelConexion.setLayout(PanelConexionLayout);
@@ -1222,7 +1260,7 @@ public class Original extends javax.swing.JFrame {
                             .addGroup(PanelConexionLayout.createSequentialGroup()
                                 .addComponent(jLabel15)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(jtf_RemoteServer2, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(jLabel4)
                             .addGroup(PanelConexionLayout.createSequentialGroup()
                                 .addGroup(PanelConexionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1230,24 +1268,22 @@ public class Original extends javax.swing.JFrame {
                                     .addComponent(jLabel13)
                                     .addComponent(jLabel12)
                                     .addComponent(jLabel11)
-                                    .addComponent(jLabel10))
+                                    .addComponent(jLabel10)
+                                    .addComponent(jLabel6))
                                 .addGap(18, 18, 18)
                                 .addGroup(PanelConexionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(PanelConexionLayout.createSequentialGroup()
-                                .addComponent(jLabel6)
-                                .addGap(61, 61, 61)
-                                .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                    .addComponent(jtf_DDBB, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jtf_UserDDBB, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jtf_PassDDBB, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jtf_Puerto, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jtf_LocalServer, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jtf_RemoteServer, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                     .addGroup(PanelConexionLayout.createSequentialGroup()
                         .addGap(82, 82, 82)
-                        .addComponent(jButton1)
+                        .addComponent(btn_Editar)
                         .addGap(116, 116, 116)
-                        .addComponent(jButton2)))
-                .addContainerGap(378, Short.MAX_VALUE))
+                        .addComponent(btn_Guardar)))
+                .addContainerGap(307, Short.MAX_VALUE))
         );
         PanelConexionLayout.setVerticalGroup(
             PanelConexionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1257,36 +1293,36 @@ public class Original extends javax.swing.JFrame {
                 .addGap(38, 38, 38)
                 .addGroup(PanelConexionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel6)
-                    .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jtf_DDBB, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(PanelConexionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel10)
-                    .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jtf_UserDDBB, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(PanelConexionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel11)
-                    .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jtf_PassDDBB, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(PanelConexionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel12)
-                    .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jtf_Puerto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(PanelConexionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel13)
-                    .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jtf_LocalServer, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(PanelConexionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel14)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jtf_RemoteServer, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(PanelConexionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel15)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jtf_RemoteServer2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(76, 76, 76)
                 .addGroup(PanelConexionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
-                    .addComponent(jButton2))
-                .addContainerGap(114, Short.MAX_VALUE))
+                    .addComponent(btn_Editar)
+                    .addComponent(btn_Guardar))
+                .addContainerGap(99, Short.MAX_VALUE))
         );
 
         CardL.add(PanelConexion, "PanelConexion");
@@ -1300,19 +1336,23 @@ public class Original extends javax.swing.JFrame {
         jLabel7.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel7.setText("Sensor 1");
 
-        jTextField8.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jtfSensor1.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jtfSensor1.setEnabled(false);
 
-        jTextField9.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jtfSensor2.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jtfSensor2.setEnabled(false);
 
         jLabel8.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel8.setText("Sensor 2");
 
-        jTextField10.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jtfSensor3.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jtfSensor3.setEnabled(false);
 
         jLabel9.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel9.setText("Sensor 3");
 
-        jTextField11.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jtfSensor4.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jtfSensor4.setEnabled(false);
 
         jLabel16.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel16.setText("Sensor 4");
@@ -1320,19 +1360,23 @@ public class Original extends javax.swing.JFrame {
         jLabel17.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel17.setText("Sensor 5");
 
-        jTextField12.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jtfSensor5.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jtfSensor5.setEnabled(false);
 
         jLabel18.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel18.setText("Sensor 6");
 
-        jTextField13.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jtfSensor6.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jtfSensor6.setEnabled(false);
 
         jLabel19.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel19.setText("Sensor 7");
 
-        jTextField14.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jtfSensor7.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jtfSensor7.setEnabled(false);
 
-        jTextField15.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jtfSensor8.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jtfSensor8.setEnabled(false);
 
         jLabel20.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel20.setText("Sensor 8");
@@ -1340,16 +1384,88 @@ public class Original extends javax.swing.JFrame {
         jLabel21.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel21.setText("Sensor 9");
 
-        jTextField16.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jtfSensor9.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jtfSensor9.setEnabled(false);
 
         jLabel22.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel22.setText("Sensor 10");
 
-        jTextField17.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jtfSensor10.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jtfSensor10.setEnabled(false);
 
-        jButton3.setText("Modificar");
+        btn_Modificar.setText("Modificar");
+        btn_Modificar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_ModificarActionPerformed(evt);
+            }
+        });
 
-        jButton4.setText("Aceptar");
+        btnAceptar.setText("Aceptar");
+        btnAceptar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAceptarActionPerformed(evt);
+            }
+        });
+
+        jLabel23.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel23.setText("Residente 1");
+
+        jtfResidente1.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jtfResidente1.setEnabled(false);
+
+        jLabel24.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel24.setText("Residente 2");
+
+        jtfResidente2.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jtfResidente2.setEnabled(false);
+
+        jLabel25.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel25.setText("Residente 3");
+
+        jtfResidente3.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jtfResidente3.setEnabled(false);
+
+        jtfResidente4.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jtfResidente4.setEnabled(false);
+
+        jtfResidente5.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jtfResidente5.setEnabled(false);
+
+        jtfResidente6.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jtfResidente6.setEnabled(false);
+
+        jtfResidente7.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jtfResidente7.setEnabled(false);
+
+        jtfResidente8.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jtfResidente8.setEnabled(false);
+
+        jtfResidente9.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jtfResidente9.setEnabled(false);
+
+        jtfResidente10.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jtfResidente10.setEnabled(false);
+
+        jLabel26.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel26.setText("Residente 10");
+
+        jLabel27.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel27.setText("Residente 9");
+
+        jLabel28.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel28.setText("Residente 8");
+
+        jLabel29.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel29.setText("Residente 7");
+
+        jLabel30.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel30.setText("Residente 6");
+
+        jLabel31.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel31.setText("Residente 5");
+
+        jLabel32.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel32.setText("Residente 4");
 
         javax.swing.GroupLayout PanelConfgSensoresLayout = new javax.swing.GroupLayout(PanelConfgSensores);
         PanelConfgSensores.setLayout(PanelConfgSensoresLayout);
@@ -1361,45 +1477,72 @@ public class Original extends javax.swing.JFrame {
                         .addGap(143, 143, 143)
                         .addComponent(jLabel5))
                     .addGroup(PanelConfgSensoresLayout.createSequentialGroup()
-                        .addGap(216, 216, 216)
+                        .addGap(230, 230, 230)
+                        .addComponent(btn_Modificar)
+                        .addGap(66, 66, 66)
+                        .addComponent(btnAceptar)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(PanelConfgSensoresLayout.createSequentialGroup()
+                .addGap(34, 34, 34)
+                .addGroup(PanelConfgSensoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel22)
+                    .addGroup(PanelConfgSensoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(jLabel21)
                         .addGroup(PanelConfgSensoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(PanelConfgSensoresLayout.createSequentialGroup()
-                                .addGroup(PanelConfgSensoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel22)
-                                    .addGroup(PanelConfgSensoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                        .addComponent(jLabel21)
-                                        .addGroup(PanelConfgSensoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jLabel8)
-                                            .addComponent(jLabel7)
-                                            .addComponent(jLabel9)
-                                            .addComponent(jLabel16)
-                                            .addComponent(jLabel17)
-                                            .addComponent(jLabel18)
-                                            .addComponent(jLabel19)
-                                            .addComponent(jLabel20))))
-                                .addGap(18, 18, 18)
-                                .addGroup(PanelConfgSensoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(jTextField17, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGroup(PanelConfgSensoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                        .addComponent(jTextField16, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGroup(PanelConfgSensoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jTextField9, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(jTextField8, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(jTextField10, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(jTextField11, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(jTextField12, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(jTextField13, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(jTextField14, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(jTextField15, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                            .addGroup(PanelConfgSensoresLayout.createSequentialGroup()
-                                .addGap(14, 14, 14)
-                                .addComponent(jButton3)
-                                .addGap(66, 66, 66)
-                                .addComponent(jButton4)))))
-                .addContainerGap(179, Short.MAX_VALUE))
+                            .addComponent(jLabel8)
+                            .addComponent(jLabel7)
+                            .addComponent(jLabel9)
+                            .addComponent(jLabel16)
+                            .addComponent(jLabel17)
+                            .addComponent(jLabel18)
+                            .addComponent(jLabel19)
+                            .addComponent(jLabel20))))
+                .addGap(18, 18, 18)
+                .addGroup(PanelConfgSensoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jtfSensor10, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(PanelConfgSensoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(jtfSensor9, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(PanelConfgSensoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jtfSensor2, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jtfSensor1, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jtfSensor3, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jtfSensor4, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jtfSensor5, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jtfSensor6, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jtfSensor7, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jtfSensor8, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 55, Short.MAX_VALUE)
+                .addGroup(PanelConfgSensoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel26)
+                    .addGroup(PanelConfgSensoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(jLabel27)
+                        .addGroup(PanelConfgSensoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel24)
+                            .addComponent(jLabel23)
+                            .addComponent(jLabel25)
+                            .addComponent(jLabel32)
+                            .addComponent(jLabel31)
+                            .addComponent(jLabel30)
+                            .addComponent(jLabel29)
+                            .addComponent(jLabel28))))
+                .addGap(18, 18, 18)
+                .addGroup(PanelConfgSensoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jtfResidente10, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(PanelConfgSensoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(jtfResidente9, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(PanelConfgSensoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jtfResidente2, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jtfResidente1, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jtfResidente3, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jtfResidente4, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jtfResidente5, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jtfResidente6, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jtfResidente7, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jtfResidente8, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addGap(64, 64, 64))
         );
 
-        PanelConfgSensoresLayout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {jTextField10, jTextField11, jTextField12, jTextField13, jTextField14, jTextField15, jTextField16, jTextField17, jTextField8, jTextField9});
+        PanelConfgSensoresLayout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {jtfSensor1, jtfSensor10, jtfSensor2, jtfSensor3, jtfSensor4, jtfSensor5, jtfSensor6, jtfSensor7, jtfSensor8, jtfSensor9});
 
         PanelConfgSensoresLayout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {jLabel16, jLabel17, jLabel18, jLabel19, jLabel20, jLabel21, jLabel22, jLabel7, jLabel8, jLabel9});
 
@@ -1408,60 +1551,108 @@ public class Original extends javax.swing.JFrame {
             .addGroup(PanelConfgSensoresLayout.createSequentialGroup()
                 .addGap(34, 34, 34)
                 .addComponent(jLabel5)
-                .addGap(48, 48, 48)
-                .addGroup(PanelConfgSensoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel7)
-                    .addComponent(jTextField8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(PanelConfgSensoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel8)
-                    .addComponent(jTextField9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(PanelConfgSensoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel9)
-                    .addComponent(jTextField10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(PanelConfgSensoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel16)
-                    .addComponent(jTextField11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(PanelConfgSensoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel17)
-                    .addComponent(jTextField12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(PanelConfgSensoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel18)
-                    .addComponent(jTextField13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(PanelConfgSensoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel19)
-                    .addComponent(jTextField14, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(PanelConfgSensoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel20)
-                    .addComponent(jTextField15, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(PanelConfgSensoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel21)
-                    .addComponent(jTextField16, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(PanelConfgSensoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel22)
-                    .addComponent(jTextField17, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(51, 51, 51)
+                .addGap(44, 44, 44)
+                .addGroup(PanelConfgSensoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(PanelConfgSensoresLayout.createSequentialGroup()
+                        .addGroup(PanelConfgSensoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel7)
+                            .addComponent(jtfSensor1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(PanelConfgSensoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel8)
+                            .addComponent(jtfSensor2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(PanelConfgSensoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel9)
+                            .addComponent(jtfSensor3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(PanelConfgSensoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel16)
+                            .addComponent(jtfSensor4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(PanelConfgSensoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel17)
+                            .addComponent(jtfSensor5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(PanelConfgSensoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel18)
+                            .addComponent(jtfSensor6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(PanelConfgSensoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel19)
+                            .addComponent(jtfSensor7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(PanelConfgSensoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel20)
+                            .addComponent(jtfSensor8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(PanelConfgSensoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel21)
+                            .addComponent(jtfSensor9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(PanelConfgSensoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel22)
+                            .addComponent(jtfSensor10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(PanelConfgSensoresLayout.createSequentialGroup()
+                        .addGroup(PanelConfgSensoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel23)
+                            .addComponent(jtfResidente1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(PanelConfgSensoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel24)
+                            .addComponent(jtfResidente2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(PanelConfgSensoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel25)
+                            .addComponent(jtfResidente3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(PanelConfgSensoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel32)
+                            .addComponent(jtfResidente4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(PanelConfgSensoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel31)
+                            .addComponent(jtfResidente5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(PanelConfgSensoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel30)
+                            .addComponent(jtfResidente6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(PanelConfgSensoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel29)
+                            .addComponent(jtfResidente7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(PanelConfgSensoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel28)
+                            .addComponent(jtfResidente8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(PanelConfgSensoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel27)
+                            .addComponent(jtfResidente9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(PanelConfgSensoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel26)
+                            .addComponent(jtfResidente10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(1, 1, 1)))
+                .addGap(54, 54, 54)
                 .addGroup(PanelConfgSensoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton3)
-                    .addComponent(jButton4))
+                    .addComponent(btn_Modificar)
+                    .addComponent(btnAceptar))
                 .addContainerGap(84, Short.MAX_VALUE))
         );
 
-        PanelConfgSensoresLayout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {jTextField10, jTextField11, jTextField12, jTextField13, jTextField14, jTextField15, jTextField16, jTextField17, jTextField8, jTextField9});
+        PanelConfgSensoresLayout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {jtfSensor1, jtfSensor10, jtfSensor2, jtfSensor3, jtfSensor4, jtfSensor5, jtfSensor6, jtfSensor7, jtfSensor8, jtfSensor9});
 
         PanelConfgSensoresLayout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {jLabel16, jLabel17, jLabel18, jLabel19, jLabel20, jLabel21, jLabel22, jLabel7, jLabel8, jLabel9});
 
         CardL.add(PanelConfgSensores, "PanelConfgSensores");
 
         btnSensores.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Pir motion.PNG"))); // NOI18N
+        btnSensores.addChangeListener(new javax.swing.event.ChangeListener() {
+            public void stateChanged(javax.swing.event.ChangeEvent evt) {
+                btnSensoresStateChanged(evt);
+            }
+        });
         btnSensores.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSensoresActionPerformed(evt);
@@ -1483,6 +1674,11 @@ public class Original extends javax.swing.JFrame {
         btnMenu.setBackground(new java.awt.Color(51, 153, 255));
         btnMenu.setText("Inicio");
         btnMenu.setActionCommand("PanelSensores");
+        btnMenu.addChangeListener(new javax.swing.event.ChangeListener() {
+            public void stateChanged(javax.swing.event.ChangeEvent evt) {
+                btnMenuStateChanged(evt);
+            }
+        });
         btnMenu.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnMenuActionPerformed(evt);
@@ -1616,16 +1812,10 @@ public class Original extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_btnS10ActionPerformed
 
-    private void btn_configuracionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_configuracionActionPerformed
-        System.out.println("Configuraación activada...");
-        CardLayout card = (CardLayout)CardL.getLayout();
-        card.show(CardL, "PanelConexion");
-       
-    }//GEN-LAST:event_btn_configuracionActionPerformed
-
     private void btnMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMenuActionPerformed
         CardLayout card = (CardLayout)CardL.getLayout();
         card.show(CardL, "PanelPrincipal");
+        //Refresh_Tabulados_Sensores(true);
     }//GEN-LAST:event_btnMenuActionPerformed
 
     private void btnS3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnS3ActionPerformed
@@ -1690,45 +1880,102 @@ public class Original extends javax.swing.JFrame {
     }//GEN-LAST:event_btnS9ActionPerformed
 
     private void btnSensoresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSensoresActionPerformed
-                CardLayout card = (CardLayout)CardL.getLayout();
+        CardLayout card = (CardLayout)CardL.getLayout();
         card.show(CardL, "PanelConfgSensores");
+        Refresh_Tabulados_Sensores(false);
     }//GEN-LAST:event_btnSensoresActionPerformed
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    private void jtf_RemoteServer2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtf_RemoteServer2ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    }//GEN-LAST:event_jtf_RemoteServer2ActionPerformed
 
-    private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
+    private void jtf_RemoteServerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtf_RemoteServerActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField2ActionPerformed
+    }//GEN-LAST:event_jtf_RemoteServerActionPerformed
 
-    private void jTextField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField3ActionPerformed
+    private void jtf_LocalServerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtf_LocalServerActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField3ActionPerformed
+    }//GEN-LAST:event_jtf_LocalServerActionPerformed
 
-    private void jTextField4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField4ActionPerformed
+    private void jtf_PuertoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtf_PuertoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField4ActionPerformed
+    }//GEN-LAST:event_jtf_PuertoActionPerformed
 
-    private void jTextField5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField5ActionPerformed
+    private void jtf_PassDDBBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtf_PassDDBBActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField5ActionPerformed
+    }//GEN-LAST:event_jtf_PassDDBBActionPerformed
 
-    private void jTextField6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField6ActionPerformed
+    private void jtf_UserDDBBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtf_UserDDBBActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField6ActionPerformed
+    }//GEN-LAST:event_jtf_UserDDBBActionPerformed
 
-    private void jTextField7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField7ActionPerformed
+    private void jtf_DDBBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtf_DDBBActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField7ActionPerformed
+    }//GEN-LAST:event_jtf_DDBBActionPerformed
+
+    private void btn_EditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_EditarActionPerformed
+        jtf_DDBB.setEnabled(true);
+        jtf_UserDDBB.setEnabled(true);
+        jtf_PassDDBB.setEnabled(true);
+        jtf_Puerto.setEnabled(true);
+        jtf_LocalServer.setEnabled(true);
+        jtf_RemoteServer.setEnabled(true);
+        jtf_RemoteServer2.setEnabled(true);
+        Refresh_Tabulados_Sensores(true);
+    }//GEN-LAST:event_btn_EditarActionPerformed
+
+    private void btn_GuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_GuardarActionPerformed
+        jtf_UserDDBB.setEnabled(false);
+        jtf_PassDDBB.setEnabled(false);
+        jtf_DDBB.setEnabled(false);
+        jtf_Puerto.setEnabled(false);
+        jtf_LocalServer.setEnabled(false);
+        jtf_RemoteServer.setEnabled(false);
+        jtf_RemoteServer2.setEnabled(false);
+
+        String UserDDBB = jtf_UserDDBB.getText();
+        String PassDDBB = jtf_PassDDBB.getText();
+        String DDBB = jtf_DDBB.getText();
+        String Puerto = jtf_Puerto.getText();
+        String LocalServer = jtf_LocalServer.getText();
+        String RemoteServer = jtf_RemoteServer.getText();
+        String RemoteServer2 = jtf_RemoteServer2.getText();
+
+        DatosConfig.setTarjetaPropiedades(UserDDBB, PassDDBB, DDBB, Puerto, LocalServer, RemoteServer, RemoteServer2);
+        Refresh_Tabulados_Sensores(false);
+        System.exit(0);
+    }                                           
+/*
+    }//GEN-LAST:event_btn_GuardarActionPerformed
+*/  
+    private void btn_ModificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_ModificarActionPerformed
+       Refresh_Tabulados_Sensores(true);
+    }//GEN-LAST:event_btn_ModificarActionPerformed
+
+    private void btnAceptarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAceptarActionPerformed
+        Refresh_Tabulados_Sensores(false);
+    }//GEN-LAST:event_btnAceptarActionPerformed
 
     private void btn_configuracionStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_btn_configuracionStateChanged
-        // TODO add your handling code here:
+        Refresh_Tabulados_Sensores(false);
     }//GEN-LAST:event_btn_configuracionStateChanged
 
-    /**
-     * @param args the command line arguments
-     */
+    private void btn_configuracionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_configuracionActionPerformed
+        System.out.println("Configuraación activada...");
+        CardLayout card = (CardLayout)CardL.getLayout();
+        card.show(CardL, "PanelConexion");
+        Refresh_Tabulados_Sensores(false);
+    }//GEN-LAST:event_btn_configuracionActionPerformed
+
+    private void btnSensoresStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_btnSensoresStateChanged
+        //Refresh_Tabulados_Sensores(false);
+    }//GEN-LAST:event_btnSensoresStateChanged
+
+    private void btnMenuStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_btnMenuStateChanged
+        Refresh_Tabulados_Sensores(false);
+    }//GEN-LAST:event_btnMenuStateChanged
+
+   
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -1743,21 +1990,23 @@ public class Original extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Original.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FormularioPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Original.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FormularioPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Original.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FormularioPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Original.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FormularioPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Original().setVisible(true);
+                new FormularioPrincipal().setVisible(true);
             }
         });
     }
@@ -1778,6 +2027,7 @@ public class Original extends javax.swing.JFrame {
     private javax.swing.JPanel Sensor7;
     private javax.swing.JPanel Sensor8;
     private javax.swing.JPanel Sensor9;
+    private javax.swing.JButton btnAceptar;
     private javax.swing.JButton btnMenu;
     private javax.swing.JToggleButton btnS1;
     private javax.swing.JToggleButton btnS10;
@@ -1790,11 +2040,10 @@ public class Original extends javax.swing.JFrame {
     private javax.swing.JToggleButton btnS8;
     private javax.swing.JToggleButton btnS9;
     private javax.swing.JButton btnSensores;
+    private javax.swing.JButton btn_Editar;
+    private javax.swing.JButton btn_Guardar;
+    private javax.swing.JButton btn_Modificar;
     private javax.swing.JButton btn_configuracion;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel100;
@@ -1824,7 +2073,17 @@ public class Original extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel22;
+    private javax.swing.JLabel jLabel23;
+    private javax.swing.JLabel jLabel24;
+    private javax.swing.JLabel jLabel25;
+    private javax.swing.JLabel jLabel26;
+    private javax.swing.JLabel jLabel27;
+    private javax.swing.JLabel jLabel28;
+    private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel30;
+    private javax.swing.JLabel jLabel31;
+    private javax.swing.JLabel jLabel32;
     private javax.swing.JLabel jLabel39;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel40;
@@ -1867,23 +2126,6 @@ public class Original extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel96;
     private javax.swing.JLabel jLabel97;
     private javax.swing.JLabel jLabel98;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField10;
-    private javax.swing.JTextField jTextField11;
-    private javax.swing.JTextField jTextField12;
-    private javax.swing.JTextField jTextField13;
-    private javax.swing.JTextField jTextField14;
-    private javax.swing.JTextField jTextField15;
-    private javax.swing.JTextField jTextField16;
-    private javax.swing.JTextField jTextField17;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
-    private javax.swing.JTextField jTextField6;
-    private javax.swing.JTextField jTextField7;
-    private javax.swing.JTextField jTextField8;
-    private javax.swing.JTextField jTextField9;
     private javax.swing.JLabel jlb_Sensor1;
     private javax.swing.JLabel jlb_Sensor10;
     private javax.swing.JLabel jlb_Sensor2;
@@ -1894,5 +2136,32 @@ public class Original extends javax.swing.JFrame {
     private javax.swing.JLabel jlb_Sensor7;
     private javax.swing.JLabel jlb_Sensor8;
     private javax.swing.JLabel jlb_Sensor9;
+    private javax.swing.JTextField jtfResidente1;
+    private javax.swing.JTextField jtfResidente10;
+    private javax.swing.JTextField jtfResidente2;
+    private javax.swing.JTextField jtfResidente3;
+    private javax.swing.JTextField jtfResidente4;
+    private javax.swing.JTextField jtfResidente5;
+    private javax.swing.JTextField jtfResidente6;
+    private javax.swing.JTextField jtfResidente7;
+    private javax.swing.JTextField jtfResidente8;
+    private javax.swing.JTextField jtfResidente9;
+    private javax.swing.JTextField jtfSensor1;
+    private javax.swing.JTextField jtfSensor10;
+    private javax.swing.JTextField jtfSensor2;
+    private javax.swing.JTextField jtfSensor3;
+    private javax.swing.JTextField jtfSensor4;
+    private javax.swing.JTextField jtfSensor5;
+    private javax.swing.JTextField jtfSensor6;
+    private javax.swing.JTextField jtfSensor7;
+    private javax.swing.JTextField jtfSensor8;
+    private javax.swing.JTextField jtfSensor9;
+    private javax.swing.JTextField jtf_DDBB;
+    private javax.swing.JTextField jtf_LocalServer;
+    private javax.swing.JTextField jtf_PassDDBB;
+    private javax.swing.JTextField jtf_Puerto;
+    private javax.swing.JTextField jtf_RemoteServer;
+    private javax.swing.JTextField jtf_RemoteServer2;
+    private javax.swing.JTextField jtf_UserDDBB;
     // End of variables declaration//GEN-END:variables
 }
