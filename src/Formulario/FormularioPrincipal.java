@@ -24,6 +24,9 @@ public class FormularioPrincipal extends javax.swing.JFrame {
     private final VariablesConfig DatosConfig;
     private final Timer Temporizador;
     private Boolean tempIsPaused;
+    
+    private final ArrayList<ArrayList> ListadoDeSensores;//?????????
+    
   
     private Cls_Conexion cnn;
    
@@ -35,10 +38,39 @@ public class FormularioPrincipal extends javax.swing.JFrame {
         Actividad = new Cls_Alarma(cnn);
         DatosConfig = new VariablesConfig();
         Temporizador = new Timer();
+        ListadoDeSensores = new ArrayList<>();///////??????
         
     add(btnMenu);
     add(btn_configuracion); 
     add(btnSensores);
+    
+    /*
+        ListadoDeSensores.add(jlb_Sensor1);
+        //System.out.println("*****************************************Valor Index 0 = "+ListadoDeSensores.get(0).getText());
+        ListadoDeSensores.add(jlb_Sensor2);
+        ListadoDeSensores.add(jlb_Sensor3);
+        ListadoDeSensores.add(jlb_Sensor4);
+        ListadoDeSensores.add(jlb_Sensor5);
+        ListadoDeSensores.add(jlb_Sensor6);
+        ListadoDeSensores.add(jlb_Sensor7);
+        ListadoDeSensores.add(jlb_Sensor8);
+        ListadoDeSensores.add(jlb_Sensor9);
+        ListadoDeSensores.add(jlb_Sensor10);
+        */
+
+        Refresh_Tabulados_Sensores(false);
+
+        jtf_UserDDBB.setText(DatosConfig.dimeUser());
+        jtf_PassDDBB.setText(DatosConfig.dimePass());
+        jtf_DDBB.setText(DatosConfig.dimeDDBB());
+        jtf_Puerto.setText(DatosConfig.dimePuerto());
+        jtf_LocalServer.setText(DatosConfig.dimeLocalServer());
+        jtf_RemoteServer.setText(DatosConfig.dimeRemoteServer());
+        jtf_RemoteServer2.setText(DatosConfig.dimeRemoteServer2());
+
+    
+    
+    
  
         int auxInt = 1;
       
