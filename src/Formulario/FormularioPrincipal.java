@@ -25,7 +25,7 @@ public class FormularioPrincipal extends javax.swing.JFrame {
     private final Timer Temporizador;
     private Boolean tempIsPaused;
     
-    private final ArrayList<ArrayList> ListadoDeSensores;//?????????
+    private final ArrayList<String> ListadoDeSensores;//?????????
     
   
     private Cls_Conexion cnn;
@@ -38,25 +38,26 @@ public class FormularioPrincipal extends javax.swing.JFrame {
         Actividad = new Cls_Alarma(cnn);
         DatosConfig = new VariablesConfig();
         Temporizador = new Timer();
-        ListadoDeSensores = new ArrayList<>();///////??????
+        ListadoDeSensores = new ArrayList<String>();///////??????
         
     add(btnMenu);
     add(btn_configuracion); 
     add(btnSensores);
     
-    /*
-        ListadoDeSensores.add(jlb_Sensor1);
-        //System.out.println("*****************************************Valor Index 0 = "+ListadoDeSensores.get(0).getText());
-        ListadoDeSensores.add(jlb_Sensor2);
-        ListadoDeSensores.add(jlb_Sensor3);
-        ListadoDeSensores.add(jlb_Sensor4);
-        ListadoDeSensores.add(jlb_Sensor5);
-        ListadoDeSensores.add(jlb_Sensor6);
-        ListadoDeSensores.add(jlb_Sensor7);
-        ListadoDeSensores.add(jlb_Sensor8);
-        ListadoDeSensores.add(jlb_Sensor9);
-        ListadoDeSensores.add(jlb_Sensor10);
-        */
+  
+        ListadoDeSensores.add(jlb_Sensor1.toString());//Tengo que pasarlo a string?
+        System.out.println("*****************************************Valor Index 0 = "+ListadoDeSensores.get(0));
+         
+        ListadoDeSensores.add(jlb_Sensor2.toString());
+        ListadoDeSensores.add(jlb_Sensor3.toString());
+        ListadoDeSensores.add(jlb_Sensor4.toString());
+        ListadoDeSensores.add(jlb_Sensor5.toString());
+        ListadoDeSensores.add(jlb_Sensor6.toString());
+        ListadoDeSensores.add(jlb_Sensor7.toString());
+        ListadoDeSensores.add(jlb_Sensor8.toString());
+        ListadoDeSensores.add(jlb_Sensor9.toString());
+        ListadoDeSensores.add(jlb_Sensor10.toString());
+       
 
         Refresh_Tabulados_Sensores(false);
 
@@ -67,13 +68,19 @@ public class FormularioPrincipal extends javax.swing.JFrame {
         jtf_LocalServer.setText(DatosConfig.dimeLocalServer());
         jtf_RemoteServer.setText(DatosConfig.dimeRemoteServer());
         jtf_RemoteServer2.setText(DatosConfig.dimeRemoteServer2());
-
-    
-    
-    
  
-        int auxInt = 1;
-      
+        
+        jlb_Sensor1.setText("S1");
+        jlb_Sensor2.setText("S2");
+        jlb_Sensor3.setText("S3");
+        jlb_Sensor4.setText("S4");
+        jlb_Sensor5.setText("S5");
+        jlb_Sensor6.setText("S6");
+        jlb_Sensor7.setText("S7");
+        jlb_Sensor8.setText("S8");
+        jlb_Sensor9.setText("S9");
+        jlb_Sensor10.setText("S10");
+        
         
         Actividad.Armado_Notificaciones = true;
 
@@ -102,7 +109,9 @@ public class FormularioPrincipal extends javax.swing.JFrame {
     }
 
     private void listar_Actividad() throws InterruptedException, ClassNotFoundException, SQLException {
-   
+        //jtb_Actividad.setModel(Actividad.Tabla_Actividad());
+        //jlb_estado.setText(String.valueOf(Actividad.Cadena_Estado));
+        jlb_inactividad.setText(String.valueOf(Actividad.Inactividad_Minutos) + " Minutos");
     }
 
     private void listar_Sensores() throws InterruptedException {
@@ -151,9 +160,9 @@ public class FormularioPrincipal extends javax.swing.JFrame {
         jLabel40 = new javax.swing.JLabel();
         btnS1 = new javax.swing.JToggleButton();
         jLabel41 = new javax.swing.JLabel();
-        jLabel42 = new javax.swing.JLabel();
         jlb_Sensor1 = new javax.swing.JLabel();
         jLabel45 = new javax.swing.JLabel();
+        jlb_inactividad = new javax.swing.JLabel();
         Sensor2 = new javax.swing.JPanel();
         jLabel74 = new javax.swing.JLabel();
         jLabel75 = new javax.swing.JLabel();
@@ -355,15 +364,15 @@ public class FormularioPrincipal extends javax.swing.JFrame {
         jLabel41.setFont(new java.awt.Font("Yu Gothic", 0, 14)); // NOI18N
         jLabel41.setText("Habitación");
 
-        jLabel42.setFont(new java.awt.Font("Yu Gothic", 1, 14)); // NOI18N
-        jLabel42.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        jLabel42.setText("3 min");
-
         jlb_Sensor1.setFont(new java.awt.Font("Yu Gothic", 1, 24)); // NOI18N
-        jlb_Sensor1.setText("201");
+        jlb_Sensor1.setText("Tes");
 
         jLabel45.setFont(new java.awt.Font("Yu Gothic", 0, 14)); // NOI18N
         jLabel45.setText("Joselito");
+
+        jlb_inactividad.setFont(new java.awt.Font("Yu Gothic", 1, 14)); // NOI18N
+        jlb_inactividad.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jlb_inactividad.setText("0");
 
         javax.swing.GroupLayout Sensor1Layout = new javax.swing.GroupLayout(Sensor1);
         Sensor1.setLayout(Sensor1Layout);
@@ -388,8 +397,8 @@ public class FormularioPrincipal extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 38, Short.MAX_VALUE)
                         .addComponent(btnS1))
                     .addGroup(Sensor1Layout.createSequentialGroup()
-                        .addComponent(jLabel42, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                        .addComponent(jlb_inactividad, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(94, 94, 94)))
                 .addContainerGap())
         );
         Sensor1Layout.setVerticalGroup(
@@ -402,15 +411,14 @@ public class FormularioPrincipal extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jlb_Sensor1))
                     .addGroup(Sensor1Layout.createSequentialGroup()
-                        .addGroup(Sensor1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel42, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(Sensor1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, Sensor1Layout.createSequentialGroup()
-                                    .addGroup(Sensor1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                        .addComponent(btnS1)
-                                        .addComponent(jLabel39))
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 31, Short.MAX_VALUE))
-                                .addComponent(jLabel40)))
+                        .addGroup(Sensor1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(Sensor1Layout.createSequentialGroup()
+                                .addGroup(Sensor1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(btnS1)
+                                    .addComponent(jLabel39))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jlb_inactividad, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jLabel40, javax.swing.GroupLayout.Alignment.TRAILING))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jLabel45)))
                 .addGap(12, 12, 12))
@@ -2120,7 +2128,6 @@ public class FormularioPrincipal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel40;
     private javax.swing.JLabel jLabel41;
-    private javax.swing.JLabel jLabel42;
     private javax.swing.JLabel jLabel45;
     private javax.swing.JLabel jLabel46;
     private javax.swing.JLabel jLabel47;
@@ -2168,6 +2175,7 @@ public class FormularioPrincipal extends javax.swing.JFrame {
     private javax.swing.JLabel jlb_Sensor7;
     private javax.swing.JLabel jlb_Sensor8;
     private javax.swing.JLabel jlb_Sensor9;
+    private javax.swing.JLabel jlb_inactividad;
     private javax.swing.JTextField jtfResidente1;
     private javax.swing.JTextField jtfResidente10;
     private javax.swing.JTextField jtfResidente2;
