@@ -297,9 +297,12 @@ public class FormularioPrincipal extends javax.swing.JFrame {
         jLabel30 = new javax.swing.JLabel();
         jLabel31 = new javax.swing.JLabel();
         jLabel32 = new javax.swing.JLabel();
+        PanelActividad = new javax.swing.JPanel();
+        jLabel33 = new javax.swing.JLabel();
         btnSensores = new javax.swing.JButton();
         btn_configuracion = new javax.swing.JButton();
         btnMenu = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
@@ -1687,6 +1690,31 @@ public class FormularioPrincipal extends javax.swing.JFrame {
 
         CardL.add(PanelConfgSensores, "PanelConfgSensores");
 
+        PanelActividad.setBackground(new java.awt.Color(153, 255, 153));
+        PanelActividad.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
+        jLabel33.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel33.setText("Actividad");
+
+        javax.swing.GroupLayout PanelActividadLayout = new javax.swing.GroupLayout(PanelActividad);
+        PanelActividad.setLayout(PanelActividadLayout);
+        PanelActividadLayout.setHorizontalGroup(
+            PanelActividadLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelActividadLayout.createSequentialGroup()
+                .addContainerGap(341, Short.MAX_VALUE)
+                .addComponent(jLabel33)
+                .addGap(332, 332, 332))
+        );
+        PanelActividadLayout.setVerticalGroup(
+            PanelActividadLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PanelActividadLayout.createSequentialGroup()
+                .addGap(231, 231, 231)
+                .addComponent(jLabel33)
+                .addContainerGap(305, Short.MAX_VALUE))
+        );
+
+        CardL.add(PanelActividad, "PanelActividad");
+
         btnSensores.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Pir motion.PNG"))); // NOI18N
         btnSensores.addChangeListener(new javax.swing.event.ChangeListener() {
             public void stateChanged(javax.swing.event.ChangeEvent evt) {
@@ -1725,6 +1753,13 @@ public class FormularioPrincipal extends javax.swing.JFrame {
             }
         });
 
+        jButton1.setText("ACT");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -1732,30 +1767,37 @@ public class FormularioPrincipal extends javax.swing.JFrame {
             .addComponent(Encabezado, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(CardL, javax.swing.GroupLayout.PREFERRED_SIZE, 746, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(btnSensores, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btn_configuracion, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnMenu))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(btnMenu)
+                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btn_configuracion, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(18, Short.MAX_VALUE))
         );
+
+        layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {btnMenu, jButton1});
+
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addComponent(Encabezado, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 11, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(31, 31, 31)
                         .addComponent(btnMenu)
-                        .addGap(22, 22, 22)
-                        .addComponent(btn_configuracion)
+                        .addGap(34, 34, 34)
+                        .addComponent(jButton1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnSensores))
-                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(btnSensores)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(CardL, javax.swing.GroupLayout.PREFERRED_SIZE, 560, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(btn_configuracion))
+                    .addComponent(CardL, javax.swing.GroupLayout.PREFERRED_SIZE, 560, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap())
         );
+
+        layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {btnMenu, jButton1});
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -2015,6 +2057,12 @@ public class FormularioPrincipal extends javax.swing.JFrame {
         Refresh_Tabulados_Sensores(false);
     }//GEN-LAST:event_btnMenuStateChanged
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        CardLayout card = (CardLayout)CardL.getLayout();
+        card.show(CardL, "PanelActividad");
+        Refresh_Tabulados_Sensores(false);
+    }//GEN-LAST:event_jButton1ActionPerformed
+
    
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
@@ -2054,6 +2102,7 @@ public class FormularioPrincipal extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel CardL;
     private javax.swing.JPanel Encabezado;
+    private javax.swing.JPanel PanelActividad;
     private javax.swing.JPanel PanelConexion;
     private javax.swing.JPanel PanelConfgSensores;
     private javax.swing.JPanel PanelPrincipal;
@@ -2084,6 +2133,7 @@ public class FormularioPrincipal extends javax.swing.JFrame {
     private javax.swing.JButton btn_Guardar;
     private javax.swing.JButton btn_Modificar;
     private javax.swing.JButton btn_configuracion;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel100;
@@ -2124,6 +2174,7 @@ public class FormularioPrincipal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel30;
     private javax.swing.JLabel jLabel31;
     private javax.swing.JLabel jLabel32;
+    private javax.swing.JLabel jLabel33;
     private javax.swing.JLabel jLabel39;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel40;
